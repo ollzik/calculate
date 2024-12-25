@@ -23,7 +23,7 @@ class Calculate {
     }
     public static void calculate(int z[]) {
         long count = 0;
-        for (int i = 0; i < z.length; i++) {
+        for (int i = 0; i < z.length; i++) { // вот это да нахуй, че за гений сидит за монитором
             if (z[i] % 2 == 0) {
                 count += z[i];
             }
