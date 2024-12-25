@@ -28,11 +28,6 @@ class Calculator {
                 outputArray[i][j] = str.charAt(inputArray[i][j]);
             }
         }
-        for (int i = 0; i < inputArray.length; i++) {
-            for (int j = 0; j < inputArray[i].length; j++) {
-                System.out.print(outputArray[i][j]);
-            }
-        }
         return outputArray;
     }
 }
