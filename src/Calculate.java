@@ -1,46 +1,38 @@
 import java.util.Scanner;
-class Calculate {
-    public static void calculate(String str) {
-        int z = 0;
+class Calculator {
+    public int calculate(String str) {
+        int count = 0;
         for (int i = 0; i < str.length(); i++) {
-            if (('а' <= str.charAt(i)) && 'п' >= str.charAt(i)) {
-                z++;
-                continue;
-            } else if (('А' <= str.charAt(i)) && 'П' >= str.charAt(i)) {
-                z++;
-                continue;
-            } else if (('a' <= str.charAt(i)) && 'm' >= str.charAt(i)) {
-                z++;
-                continue;
-            } else if (('A' <= str.charAt(i)) && 'M' >= str.charAt(i)) {
-                z++;
-                continue;
-            } else {
+            if (('а' <= str.charAt(i)) && 'п' >= str.charAt(i) || ('А' <= str.charAt(i)) && 'П' >= str.charAt(i) || ('a' <= str.charAt(i)) && 'm' >= str.charAt(i) || ('A' <= str.charAt(i)) && 'M' >= str.charAt(i)) {
+                count++;
             }
-            ;
         }
-        System.out.println(z);
+        return count;
     }
-    public static void calculate(int z[]) {
-        long count = 0;
-        for (int i = 0; i < z.length; i++) { // вот это да нахуй, че за гений сидит за монитором
-            if (z[i] % 2 == 0) {
-                count += z[i];
+
+    public long calculate(int[] array) {
+        long sum = 0;
+        for (int i = 0; i < array.length; i++) { // вот это да нахуй, че за гений сидит за монитором
+            if (array[i] % 2 == 0) {
+                sum += array[i];
             }
         }
-        System.out.println(count);
+        return sum;
     }
-    public static void calculate(int l[][], String str) {
-        char[][] y = new char[l.length][l[0].length];
-        for (int i = 0; i < l.length; i++) {
-            for (int j = 0; j < l[i].length; j++) {
-                y[i][j] = str.charAt(l[i][j]);
+
+    public char[][] calculate(int[][] inputArray, String str) {
+        char[][] outputArray = new char[inputArray.length][];
+        for (int i = 0; i < inputArray.length; i++) {
+            outputArray[i] = new char[inputArray[i].length];
+            for (int j = 0; j < inputArray[i].length; j++) {
+                outputArray[i][j] = str.charAt(inputArray[i][j]);
             }
         }
-        for (int i = 0; i < l.length; i++) {
-            for (int j = 0; j < l[i].length; j++) {
-                System.out.print(y[i][j]);
+        for (int i = 0; i < inputArray.length; i++) {
+            for (int j = 0; j < inputArray[i].length; j++) {
+                System.out.print(outputArray[i][j]);
             }
         }
+        return outputArray;
     }
 }
